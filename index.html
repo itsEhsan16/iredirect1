@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; URL='https://github.com/itsEhsan16/Seva'" />
+    <meta http-equiv="refresh" content="6; URL='https://github.com/itsEhsan16/Seva'" />
     <title>Redirecting...</title>
     <style>
         body {
@@ -45,11 +45,22 @@
     </style>
     <script>
         window.onload = function() {
-            window.location.href = 'https://github.com/itsEhsan16/Seva';
+            var timeLeft = 6;
+            var countdownElement = document.getElementById('countdown');
+            
+            var timer = setInterval(function() {
+                timeLeft--;
+                countdownElement.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'https://github.com/itsEhsan16/Seva';
+                }
+            }, 1000);
         }
     </script>
 </head>
 <body>
-    <p>If you're not redirected, <a href="https://github.com/itsEhsan16/Seva">click here</a>.</p>
+    <p>Redirecting in <span id="countdown">6</span> seconds...<br>If you're not redirected, <a href="https://github.com/itsEhsan16/Seva">click here</a>.</p>
 </body>
 </html>
